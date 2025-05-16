@@ -1,0 +1,27 @@
+.simple-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(to bottom, #cceeff, #fff5e1);
+
+    h1{
+        margin: 0;
+    }
+
+    img {
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        object-fit: cover;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
