@@ -1,0 +1,60 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgb(181, 230, 255);
+
+    .delete-btn {
+        background: none;
+        border: none;
+        color: rgb(144, 10, 10);
+        font-weight: 550;
+        font-style: italic;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+    }
+
+    .delete-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgb(30, 67, 83);;
+        cursor: pointer;
+    }
+
+    .check-box {
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        appearance: none;
+        transition: all 0.2s ease;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .check-box:checked {
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+    .check-box:checked+.task-text {
+        text-decoration: line-through;
+    }
+
+
+    .check-box:checked::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 8px;
+        width: 6px;
+        height: 12px;
+        border: solid rgb(76, 159, 104);
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+}
