@@ -1,17 +1,16 @@
 import './List.scss'
 import Task from '../Task/Task'
-import type { TaskListType } from '../../types/TasksTypes';
+import { useTaskContext } from '../../context/TaskContext';
 
-
-const List = ({ tasks, onDelete, onToggle }: TaskListType) => {
+const List = () => {
+  const {tasks}=useTaskContext();
+  
   return (
     <div className="list">
       {tasks.map((task) => (
         <Task
           key={task.id}
           task={task}
-          onDelete={onDelete}
-          onToggle={onToggle}
         />
       ))}
     </div>

@@ -1,7 +1,14 @@
+import { useTaskContext } from '../../context/TaskContext';
+import type { TaskType } from '../../types/TaskType';
 import './Task.scss'
-import type { TaskProps } from '../../types/TasksTypes';
 
-const Task = ({task, onDelete, onToggle }: TaskProps) => {  
+export type TaskProps = {
+  task: TaskType;
+};
+
+const Task = ({task }: TaskProps) => {  
+  const {deleteTask, toggleTask}=useTaskContext();
+  
   return (
     <div className='task'>
       <label className='checkbox-label'>
@@ -9,11 +16,11 @@ const Task = ({task, onDelete, onToggle }: TaskProps) => {
           className="check-box"
           name="task"
           checked={task.isDone}
-          onChange={()=>{onToggle(task.id)}}
+          onChange={()=>{toggleTask(task.id)}}
         />
         <span className="task-text">{task.taskName}</span>
       </label>
-      <button className='delete-btn' onClick={() => onDelete(task.id)}>X</button>
+      <button className='delete-btn' onClick={() => deleteTask(task.id)}>X</button>
     </div>
   )
 }
